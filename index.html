@@ -95,6 +95,7 @@
     }
 
     function calculate() {
+      const startPrice = 3000; // zawsze doliczane
       const bill = parseFloat(document.getElementById('bill').value);
       const type = document.getElementById('type').value;
       const mount = document.getElementById('mount').value;
@@ -129,8 +130,8 @@
       }
 
       const turbinePrice = turbine === "3" ? 12000 : turbine === "6" ? 24000 : 0;
-      const total = pvPrice + batteryPrice + turbinePrice + backupPrice + trenchPrice;
-      const finalPrice = total + discount; // rabat dodawany
+      const total = pvPrice + batteryPrice + turbinePrice + backupPrice + trenchPrice + startPrice;
+const finalPrice = total + discount; // rabat dodawany
       document.getElementById('result').innerHTML = `
         <table>
           <tr><th colspan="2">Podsumowanie instalacji PV</th></tr>
